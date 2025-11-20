@@ -76,3 +76,14 @@ Due to the dataset being heavily imbalanced toward male actors, **precision, rec
 1. Clone the repository:
 ```bash
 git clone <repository_url>
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Open and run the Jupyter Notebook:
+```bash
+jupyter notebook "Model predicting gender.ipynb"
+```
