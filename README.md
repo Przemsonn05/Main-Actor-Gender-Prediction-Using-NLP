@@ -37,7 +37,7 @@ The dataset (`movie_reviews.csv`) contains movie reviews with metadata. Below ar
 **Target variable:** `first_actor_gender` — Male / Female
 
 ## Tech Stack
-- Python 3.x  
+- Python 3.12.11 
 - Data Manipulation: Pandas, NumPy  
 - Visualization: Matplotlib, Seaborn  
 - NLP & Machine Learning: Scikit-learn, Spacy  
