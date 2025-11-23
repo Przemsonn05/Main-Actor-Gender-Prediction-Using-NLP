@@ -70,7 +70,18 @@ Due to the dataset being heavily imbalanced toward male actors, **precision, rec
 | **Logistic Regression** | 93% | ~90% | ~94% |
 | **Linear SVC (Best)** | **95%** | **~86%** | **~98%** |
 
-**Conclusion:** Linear SVC provides the most balanced performance across genders, with the best combination of precision and recall.
+**Interpretation**:
+
+- Naive Bayes achieved high accuracy but failed to correctly identify most female actors due to class imbalance.
+
+- Logistic Regression performed much better, balancing recall across both genders.
+
+- Linear SVC delivered the best overall performance, combining high accuracy with strong recall for both classes.
+
+**Conclusion**:
+
+This project demonstrates how text descriptions can be used to infer actor gender and highlights the importance of using recall and F1-score when dealing with imbalanced datasets.
+Proper preprocessing and careful model selection significantly improved the ability to detect the underrepresented class.
 
 ## How to Run
 1. Clone the repository:
