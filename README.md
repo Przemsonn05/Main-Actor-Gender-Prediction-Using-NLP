@@ -78,8 +78,7 @@ The table below summarizes the performance of the three models tested. Note the 
 
 **Conclusion**:
 
-This project demonstrates how text descriptions can be used to infer actor gender and highlights the importance of using recall and F1-score when dealing with imbalanced datasets.
-Proper preprocessing and careful model selection significantly improved the ability to detect the underrepresented class.
+This project successfully demonstrated that natural language processing can predict a main actor's gender based solely on movie review text. A major challenge was the dataset's severe class imbalance, which made standard accuracy scores misleading and necessitated the use of Recall and F1-score for evaluation. Initial analysis revealed a reliance on gendered pronouns, so we applied custom stop word filtering to force the models to learn deeper stylistic patterns rather than simply counting words like "he" or "she." While the baseline Multinomial Naive Bayes model showed significant bias against the minority class, implementing a weighted Logistic Regression drastically improved Female Recall to approximately 90%. Ultimately, the Linear Support Vector Classifier (LinearSVC) proved to be the superior model, achieving the highest overall accuracy of 95.3%. This model offered the best trade-off between precision and recall, effectively distinguishing between genders without excessive false positives. These results highlight that handling class imbalance and selecting appropriate algorithms are just as critical as feature engineering in text classification tasks. Future iterations could explore sentiment analysis to investigate potential bias in film criticism or employ deep learning models like BERT for capturing contextual nuances. 
 
 ## How to Run
 1. Clone the repository:
