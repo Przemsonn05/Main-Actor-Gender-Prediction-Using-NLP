@@ -62,21 +62,22 @@ The dataset (`movie_reviews.csv`) contains movie reviews with metadata. Below ar
     - **Linear SVC (Support Vector Classifier)**: hyperparameter tuning using `GridSearchCV`; achieved the best overall balance  
 
 ## Results
-Due to the dataset being heavily imbalanced toward male actors, **precision, recall, and F1-score** are crucial metrics, not just accuracy.
 
-| Model | Accuracy | Female Class Recall | Male Class Recall |
-|-------|:-------:|:-----------------:|:----------------|
-| **Naive Bayes** | 87% | ~48% | ~99% |
-| **Logistic Regression** | 93% | ~90% | ~94% |
-| **Linear SVC (Best)** | **95%** | **~86%** | **~98%** |
+Due to the dataset being heavily imbalanced toward male actors, standard accuracy is insufficient to evaluate performance. We focused on **Precision, Recall, and F1-score**, with a special emphasis on the minority class (Female).
 
-**Interpretation**:
+| Model | Accuracy | Female Recall | Female Precision | Female F1-Score |
+| :--- | :---: | :---: | :---: | :---: |
+| **Multinomial NB** | 87.2% | 47.7% | **99.3%** | 0.64 |
+| **Logistic Regression** (Weighted) | 93.4% | **89.7%** | 84.3% | 0.87 |
+| **Linear SVC** (Best Model) | **95.3%** | 86.6% | 93.7% | **0.90** |
 
-- Naive Bayes achieved high accuracy but failed to correctly identify most female actors due to class imbalance.
+### Interpretation & Conclusion
 
-- Logistic Regression performed much better, balancing recall across both genders.
+The analysis revealed distinct behaviors among the models:
 
-- Linear SVC delivered the best overall performance, combining high accuracy with strong recall for both classes.
+* **Multinomial Naive Bayes (Baseline):** This model exhibited a strong bias towards the majority class. While it achieved decent accuracy, it failed to identify more than half of the female leads (**Recall ~48%**), making it ineffective for this specific problem.
+* **Logistic Regression:** Applying `class_weight='balanced'` successfully mitigated the bias, drastically improving the detection of female actors (**Recall ~90%**). However, this came with a trade-off: the model generated more false positives (lower precision).
+* **Linear SVC (Winner):** The Support Vector Classifier proved to be the most robust solution. It achieved the **highest overall accuracy (95.3%)** and offered the best balance between sensitivity and correctness. It maintained a high recall for females (86.6%) while offering significantly better precision (93.7%) than Logistic Regression, resulting in the highest **F1-Score (0.90)**.
 
 **Conclusion**:
 
