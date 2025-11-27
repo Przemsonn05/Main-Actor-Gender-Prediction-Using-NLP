@@ -40,19 +40,6 @@ The dataset (`movie_reviews.csv`) contains 16,500+ movie reviews with comprehens
 
 ---
 
-## 🛠️ Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| **Language** | Python 3.12.11 |
-| **Data Processing** | Pandas, NumPy |
-| **Visualization** | Matplotlib, Seaborn |
-| **ML/NLP** | Scikit-learn, TF-IDF Vectorizer |
-| **Model Persistence** | Joblib |
-| **Notebook** | Jupyter |
-
----
-
 ## 🔄 Project Workflow
 
 ### 1. **Data Preprocessing**
@@ -132,54 +119,29 @@ Three models were compared with hyperparameter tuning via GridSearchCV:
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Tech Stack
 
-```
-Main-Actor-Gender-Prediction-Using-NLP/
-├── README.md                                    # This file
-├── requirements.txt                             # Python dependencies
-├── LICENSE                                      # Project license
-├── data/
-│   └── movie_reviews.csv                       # Main dataset (16,500+ reviews)
-├── models/
-│   └── linear_svc_model.joblib                 # Trained LinearSVC model (ready for inference)
-├── images/
-│   ├── review_length_distribution.png          # Review length histograms
-│   ├── top_20_most_used_words.png              # Word frequency visualization
-│   ├── number_of_actors_per_gender.png         # Gender distribution chart
-│   ├── amount_of_movie_reviews.png             # Top movies by review count
-│   ├── top_directors_by_number_of_reviews.png  # Director popularity analysis
-│   ├── confusion_matrix_first_model.png        # Naive Bayes performance
-│   ├── confusion_matrix_second_model.png       # Logistic Regression performance
-│   └── confusion_matrix_svc_model.png          # LinearSVC performance
-└── notebooks/
-    └── Model predicting gender (1).ipynb       # Complete analysis notebook
-```
+| Component | Technology |
+|-----------|-----------|
+| **Language** | Python 3.12.11 |
+| **Data Processing** | Pandas, NumPy |
+| **Visualization** | Matplotlib, Seaborn |
+| **ML/NLP** | Scikit-learn, TF-IDF Vectorizer |
+| **Model Persistence** | Joblib |
+| **Notebook** | Jupyter |
 
 ---
 
 ## 🚀 How to Run
 
-### Prerequisites
-- Python 3.8+
-- Git
-
 ### Installation & Execution
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Przemsonn05/Main-Actor-Gender-Prediction-Using-NLP.git
-   cd Main-Actor-Gender-Prediction-Using-NLP
+   git clone <repository url>
    ```
 
-2. **Create a virtual environment** (recommended):
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # On Windows
-   # source venv/bin/activate  # On macOS/Linux
-   ```
-
-3. **Install dependencies**:
+3. **Install requirements**:
    ```bash
    pip install -r requirements.txt
    ```
@@ -188,66 +150,5 @@ Main-Actor-Gender-Prediction-Using-NLP/
    ```bash
    jupyter notebook "notebooks/Model predicting gender (1).ipynb"
    ```
-   - Execute cells sequentially from top to bottom
-   - All visualizations will be saved to the `images/` folder
-   - The trained model will be saved to `models/linear_svc_model.joblib`
-
-### Using the Trained Model for Inference
-
-```python
-import joblib
-
-# Load the trained model
-model = joblib.load('models/linear_svc_model.joblib')
-
-# Prepare your review text
-review = "This movie was fantastic! The lead actor gave an amazing performance..."
-
-# Make a prediction
-prediction = model.predict([review])
-print(f"Predicted gender: {prediction[0]}")  # Output: 'Male' or 'Female'
-```
 
 ---
-
-## 💡 Future Enhancements
-
-1. **Deep Learning**: Implement transformer-based models (BERT, RoBERTa) for contextual understanding
-2. **Sentiment Analysis**: Investigate if review sentiment differs by gender of main actor
-3. **Feature Analysis**: Identify which specific words most influence predictions
-4. **Class Balancing**: Experiment with SMOTE or other advanced resampling techniques
-5. **Multi-Class Extension**: Extend to predict other character attributes (age range, race, etc.)
-6. **Cross-Validation**: Implement k-fold cross-validation for more robust evaluation
-7. **Bias Audit**: Conduct fairness analysis to detect and mitigate gender bias in predictions
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
-
-**Przemek** - [GitHub Profile](https://github.com/Przemsonn05)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📞 Contact & Support
-
-For questions, issues, or suggestions, please open an issue on the GitHub repository.
-
----
-
-## 🙏 Acknowledgments
-
-- Dataset source: Movie reviews database
-- Scikit-learn documentation and community
-- Special thanks to the NLP community for best practices and methodologies
