@@ -14,14 +14,12 @@ data/
 *.json
 *.xml
 
-# To zapobiega wrzuceniu bibliotek (całego folderu venv) na GitHuba
 .env
 .venv
 env/
 venv/
 ENV/
 
-# Jeśli będziesz zapisywać wytrenowany model (pickle, joblib itp.)
 *.pkl
 *.joblib
 *.h5
